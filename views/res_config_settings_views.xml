@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.pos_aggregator</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='pos_interface_section']" position="inside">
+                <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="pos_aggregator"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="pos_aggregator"/>
+                        <div class="text-muted">
+                            Quick access to an Aggregator session
+                        </div>
+                        <div class="content-group" attrs="{'invisible': [('pos_aggregator','=',False)]}">
+                            <div class="mt16">
+                                <label string="Floors" for="pos_floor_ids" class="o_light_label"/>
+                                <field name="pos_floor_ids" widget="many2many_tags"
+                                       attrs="{'readonly': [('pos_has_active_session','=', True)]}"/>
+                            </div>
+                            <div>
+                                <button name="%(pos_restaurant.action_restaurant_floor_form)d" icon="fa-arrow-right"
+                                        type="action" string="Floors" class="btn-link"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
