@@ -1,24 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
     <t t-name="SessionButton" owl="1">
-        <t t-foreach="display_sessions" t-as="session" t-key="session">
-            <t t-esc="session"/>
-        </t>
-
-        <div class="ticket-button" t-if="showSessionButton(2)" t-on-click="() => this.confirm(3)">
+        <div class="ticket-button">
             <div class="with-badge" >
                 <i class="fa fa-pencil mx-1"/>
             </div>
-            <div>Aggregator</div>
+            <t t-esc="display_sessions"/>
         </div>
-        <div class="ticket-button" t-if="showSessionButton(3)" t-on-click="() => this.confirm(2)">
-            <div class="with-badge" >
-                <i class="fa fa-pencil mx-1"/>
-            </div>
-            <div>Restaurant</div>
-        </div>
-
-
    </t>
     <t t-inherit="point_of_sale.Chrome" t-inherit-mode="extension">
         <xpath expr="//TicketButton" position="after">

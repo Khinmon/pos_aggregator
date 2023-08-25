@@ -26,6 +26,7 @@
     'assets': {
         'point_of_sale.assets': [
             'pos_aggregator/static/src/js/SessionButton.js',
+            'pos_aggregator/static/src/js/SessionPopup.js',
             'pos_aggregator/static/src/js/TakeAwayButton.js',
             'pos_aggregator/static/src/js/ProductScreen.js',
             'pos_aggregator/static/src/js/OrderReceipt.js',
@@ -33,6 +34,7 @@
             'pos_aggregator/static/src/xml/SessionButton.xml',
             'pos_aggregator/static/src/xml/TakeAwayButton.xml',
             'pos_aggregator/static/src/xml/OrderReceipt.xml',
+            'pos_aggregator/static/src/xml/SessionPopup.xml',
 
         ],
     },

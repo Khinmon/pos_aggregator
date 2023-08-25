@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="SessionPopup" owl="1">
+            <Draggable>
+                <div class="popup popup-selection">
+                    <header class="title drag-handle">
+                        <t t-esc="props.title" />
+                    </header>
+                    <div class="selection scrollable-y">
+                        <t t-foreach="props.list" t-as="item" t-key="item.id">
+                            <div class="selection-item" t-att-class="{ selected: item.isSelected }"
+                                 t-on-click="() => this.sessionconfirm(item.id)">
+                                <t t-esc="item.name" />
+                            </div>
+                        </t>
+                    </div>
+                    <footer class="footer">
+                        <div class="button cancel" t-on-click="cancel">
+                            <span>Cancel</span>
+                        </div>
+                    </footer>
+                </div>
+            </Draggable>
+    </t>
+
+</templates>

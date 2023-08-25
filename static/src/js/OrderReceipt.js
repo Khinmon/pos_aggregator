@@ -13,8 +13,6 @@ odoo.define("pos_aggregator.OrderReceipt", function (require) {
         self.token = 0;
         self.is_takeaway = self.env.pos.get_order().is_takeaway;
         self.takeaway = self.env.pos.takeaway;
-        console.log("HHHHHH");
-        alert(self.is_takeaway);
         if (self.is_takeaway) {
           await rpc
             .query({
